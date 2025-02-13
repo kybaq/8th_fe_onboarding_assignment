@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import SignUp from './components/SignUp/SignUp.tsx';
+import Login from './pages/login/Login.tsx';
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
         </Routes>
       </QueryClientProvider>
     </BrowserRouter>
