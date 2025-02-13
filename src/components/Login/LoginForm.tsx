@@ -1,4 +1,8 @@
+import useLogin from '../../hooks/Login/useLogin';
+
 const LoginForm = () => {
+  const { userId, userPw, setUserId, setUserPw, handleSubmit } = useLogin();
+
   return (
     <form onSubmit={(evt) => void handleSubmit(evt)}>
       <label htmlFor="ID">아이디: </label>
@@ -10,14 +14,6 @@ const LoginForm = () => {
         id="PASSWORD"
         value={userPw}
         onChange={(evt) => setUserPw(evt.target.value)}
-      />
-      <label htmlFor="NICKNAME">닉네임: </label>
-      <input
-        type="text"
-        name="user_nickname"
-        id="NICKNAME"
-        value={userNickname}
-        onChange={(evt) => setUserNickname(evt.target.value)}
       />
       <button type="submit" className="border-2">
         제출
