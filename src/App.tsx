@@ -1,17 +1,12 @@
-import { Outlet } from 'react-router';
+import { Link, Outlet } from 'react-router';
 import './App.css';
 import { useQuery } from '@tanstack/react-query';
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  completed: false;
-}
+import { Post } from './types/posts/Posts.types';
 
 export default function App() {
-  const { isPending, error, data } = useQuery<Post[]>({
+  const { isPending, error, data } = useQuery<Post>({
     queryKey: ['data'],
-    queryFn: () => fetch('https://jsonplaceholder.typicode.com/todos').then((response) => response.json()),
+    queryFn: () => fetch('https://jsonplaceholder.typicode.com/todos/1').then((response) => response.json()),
   });
 
   if (isPending) return <div>데이터를 요청하는 중...</div>;
@@ -19,8 +14,10 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <div>{data.map((el) => el.title)}</div>
+      <h1 className="text-2xl mb-1">{data.title}</h1>
+      <Link to="signup" className="underline">
+        회원가입하기
+      </Link>
       <Outlet />
     </>
   );
