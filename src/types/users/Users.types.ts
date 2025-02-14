@@ -23,3 +23,10 @@ export type User = {
   avatar: null;
   success: boolean;
 } | null;
+
+export type UserProfilePatch = {
+  avatar: string;
+  nickname: string;
+  message: string;
+  success: boolean;
+};
