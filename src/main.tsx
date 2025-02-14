@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Login from './pages/login/Login.tsx';
 import SignUp from './pages/signup/SignUp.tsx';
-import PrivateRoute from './components/MyPage/PrivateRoutes.tsx';
+import PrivateRoute from './components/Common/PrivateRoutes.tsx';
 import MyPage from './pages/mypage/MyPage.tsx';
 
 const queryClient = new QueryClient();
