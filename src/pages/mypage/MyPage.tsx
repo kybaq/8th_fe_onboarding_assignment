@@ -1,5 +1,11 @@
+import UserProfile from '../../components/MyPage/UserProfile';
+
 const MyPage = () => {
-  return <div>MyPage</div>;
+  return (
+    <div>
+      <UserProfile />
+    </div>
+  );
 };
 
 export default MyPage;

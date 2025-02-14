@@ -14,14 +14,27 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-2xl mb-1">{data.title}</h1>
-      <Link to="signup" className="underline">
-        회원가입하기
-      </Link>
-      <Link to="login" className="underline">
-        로그인 하기
-      </Link>
-      <Outlet />
+      <header>
+        <h1 className="text-2xl mb-1">{data.title}</h1>
+      </header>
+      <body>
+        <div>
+          <Link to="signup" className="underline">
+            회원가입하기
+          </Link>
+        </div>
+        <div>
+          <Link to="login" className="underline">
+            로그인 하기
+          </Link>
+        </div>
+        <div>
+          <Link to="mypage" className="undefline">
+            마이페이지
+          </Link>
+        </div>
+        <Outlet />
+      </body>
     </>
   );
 }

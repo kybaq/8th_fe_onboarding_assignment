@@ -16,3 +16,10 @@ export type AuthState = {
   login: (token: string) => void;
   logout: () => void;
 };
+
+export type User = {
+  id: string;
+  nickname: string;
+  avatar: null;
+  success: boolean;
+} | null;
