@@ -10,3 +10,9 @@ export type LoginResponse = {
   avatar: string;
   nickname: string;
 };
+
+export type AuthState = {
+  accessToken: string | null;
+  login: (token: string) => void;
+  logout: () => void;
+};
