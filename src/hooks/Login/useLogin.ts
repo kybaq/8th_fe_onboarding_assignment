@@ -18,6 +18,7 @@ const useLogin = () => {
       });
       const { accessToken } = response.data;
       login(accessToken);
+      return;
     } catch (error) {
       console.error('로그인에 문제가 발생했습니다.', error);
     }
