@@ -18,9 +18,6 @@ export default function App() {
       <Link to="signup" className="underline">
         회원가입하기
       </Link>
-      <Link to="login" className="underline">
-        로그인 하기
-      </Link>
       <Outlet />
     </>
   );
