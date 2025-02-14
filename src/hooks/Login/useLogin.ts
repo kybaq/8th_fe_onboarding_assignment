@@ -1,12 +1,14 @@
 import { FormEvent, useState } from 'react';
 import { axiosInstance } from '../../services/axios';
 import { LoginResponse } from '../../types/users/Users.types';
+import useAuthStore from '../../stores/useAuth';
 
 const useLogin = () => {
   const [userId, setUserId] = useState<string>('');
   const [userPw, setUserPw] = useState<string>('');
+  const login = useAuthStore((state) => state.login);
 
-  const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
     try {
@@ -14,13 +16,14 @@ const useLogin = () => {
         id: userId,
         password: userPw,
       });
-      console.log(response.data.success);
+      const { accessToken } = response.data;
+      login(accessToken);
     } catch (error) {
       console.error('로그인에 문제가 발생했습니다.', error);
     }
   };
 
-  return { userId, userPw, setUserId, setUserPw, handleSubmit };
+  return { userId, userPw, setUserId, setUserPw, handleLogin };
 };
 
 export default useLogin;
