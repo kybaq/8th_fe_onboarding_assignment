@@ -1,6 +1,7 @@
+import React from 'react';
 import useLogin from '../../hooks/Login/useLogin';
 
-const LoginForm = () => {
+const LoginForm: React.FC = () => {
   const { userId, userPw, setUserId, setUserPw, handleLogin } = useLogin();
 
   return (
